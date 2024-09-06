@@ -1,4 +1,5 @@
 import Post from "./components/page";
+import Link from "next/link";
 import prisma from "@/lib/prisma";
 
 async function getPosts(){
@@ -19,6 +20,7 @@ export default async function Home() {
   return (
     <div>
       <h1 className="flex justify-center items-center text-6xl ">Feeds</h1>
+      <Link href={'/add-post'}>Add post</Link>
       {
       posts.map((post)=>{
         return(
@@ -26,7 +28,7 @@ export default async function Home() {
           key={post.id}
           title={post.title}
           content={post.content}
-          authorName={post.author.name}
+          authorName={post.authorName}
           />
 
         )

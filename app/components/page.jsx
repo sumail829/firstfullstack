@@ -1,3 +1,4 @@
+import DeletePostButton from "./DeletePostButon";
 
 
 export default function Post({id,title,content,authorName})
@@ -8,6 +9,7 @@ export default function Post({id,title,content,authorName})
                 <div>{authorName}</div>
                 <div>{title}</div>
                 <div>{content}</div>
+                <DeletePostButton postId={{id}}></DeletePostButton>
             </div>
         </div>
     )
