@@ -8,6 +8,7 @@ export async function POST(request)
      const result=await prisma.post.create(
         {
             data:{
+                title,
                 content,
                 published:true,
                 author:{create:{
